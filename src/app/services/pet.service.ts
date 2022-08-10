@@ -4,6 +4,12 @@ import { PetInterface } from '../pet-interface';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+const httpOptions = {
+  header: new HttpHeaders({
+    'Content-Type': 'application/json',
+  }),
+};
+
 @Injectable({
   providedIn: 'root',
 })
@@ -17,5 +23,17 @@ export class PetService {
     // return pets;
 
     return this.http.get<PetInterface[]>(this.url);
+  }
+
+  updatePetFavorite(pet: PetInterface): Observable<PetInterface> {
+    const updateUrl = `${this.url}/${pet.id}`;
+    //@ts-ignore
+    return this.http.put<PetInterface>(updateUrl, pet, httpOptions);
+  }
+
+  deletePet(pet: PetInterface): Observable<PetInterface> {
+    const deleteUrl = `${this.url}/${pet.id}`;
+    //@ts-ignore
+    return this.http.delete<PetInterface>(deleteUrl, pet, httpOptions);
   }
 }

@@ -19,5 +19,11 @@ export class PetsComponent implements OnInit {
 
   addFavorite(pet: PetInterface) {
     pet.favorite = !pet.favorite;
+    this.petService.updatePetFavorite(pet).subscribe();
+  }
+
+  deletePet(pet: PetInterface) {
+    console.log(pet);
+    this.petService.deletePet(pet).subscribe();
   }
 }

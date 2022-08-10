@@ -1,4 +1,6 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Observable } from 'rxjs';
 import { PetInterface } from 'src/app/pet-interface';
 
 @Component({
@@ -15,6 +17,9 @@ export class PetComponent implements OnInit {
   @Output()
   onAddFavorite: EventEmitter<PetInterface> = new EventEmitter();
 
+  @Output()
+  onDeletePet: EventEmitter<PetInterface> = new EventEmitter();
+
   constructor() {}
 
   ngOnInit(): void {}
@@ -22,5 +27,10 @@ export class PetComponent implements OnInit {
   onFavorite() {
     console.log('Favorite');
     this.onAddFavorite.emit();
+  }
+
+  onDelete() {
+    // console.log('delete', pet);
+    this.onDeletePet.emit();
   }
 }
