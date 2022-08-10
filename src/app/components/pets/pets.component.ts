@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DummyData } from 'src/app/dummy-data';
+// import { DummyData } from 'src/app/dummy-data';
 import { PetInterface } from 'src/app/pet-interface';
+import { PetService } from 'src/app/services/pet.service';
 
 @Component({
   selector: 'app-pets',
@@ -8,9 +9,11 @@ import { PetInterface } from 'src/app/pet-interface';
   styleUrls: ['./pets.component.css'],
 })
 export class PetsComponent implements OnInit {
-  pets: PetInterface[] = DummyData;
+  pets: PetInterface[] = [];
 
-  constructor() {}
+  constructor(private petService: PetService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.petService.getPets().subscribe((pets) => (this.pets = pets));
+  }
 }
