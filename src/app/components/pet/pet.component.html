@@ -18,9 +18,9 @@
   <mat-card-actions>
     <button
       mat-icon-button
-      color="warn"
+      [color]="pet.favorite ? 'warn' : ''"
       aria-label="favorite button"
-      (click)="onClick()"
+      (click)="onFavorite()"
     >
       <mat-icon>favorite</mat-icon>
     </button>

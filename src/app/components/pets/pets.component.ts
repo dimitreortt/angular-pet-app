@@ -16,4 +16,8 @@ export class PetsComponent implements OnInit {
   ngOnInit(): void {
     this.petService.getPets().subscribe((pets) => (this.pets = pets));
   }
+
+  addFavorite(pet: PetInterface) {
+    pet.favorite = !pet.favorite;
+  }
 }

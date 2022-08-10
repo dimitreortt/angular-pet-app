@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PetInterface } from 'src/app/pet-interface';
 
 @Component({
@@ -12,11 +12,15 @@ export class PetComponent implements OnInit {
   @Input()
   pet: PetInterface;
 
+  @Output()
+  onAddFavorite: EventEmitter<PetInterface> = new EventEmitter();
+
   constructor() {}
 
   ngOnInit(): void {}
 
-  onClick() {
+  onFavorite() {
     console.log('Favorite');
+    this.onAddFavorite.emit();
   }
 }
