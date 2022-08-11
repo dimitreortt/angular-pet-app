@@ -15,9 +15,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AddPetComponent } from './components/add-pet/add-pet.component';
 import { FormsModule } from '@angular/forms';
+import { AboutPageComponent } from './components/about-page/about-page.component';
 
 @NgModule({
-  declarations: [AppComponent, PetComponent, PetsComponent, AddPetComponent],
+  declarations: [AppComponent, PetComponent, PetsComponent, AddPetComponent, AboutPageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
