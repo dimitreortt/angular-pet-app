@@ -36,4 +36,10 @@ export class PetService {
     //@ts-ignore
     return this.http.delete<PetInterface>(deleteUrl, pet, httpOptions);
   }
+
+  addPet(pet: PetInterface): Observable<PetInterface> {
+    const addUrl = `${this.url}/${pet.id}`;
+    //@ts-ignore
+    return this.http.post<PetInterface>(addUrl, pet, httpOptions);
+  }
 }

@@ -5,6 +5,8 @@
   <mat-grid-tile>4</mat-grid-tile>
 </mat-grid-list> -->
 
+<app-add-pet (onAddPet)="addPet($event)"></app-add-pet>
+
 <mat-grid-list cols="3" rowHeight="500px">
   <mat-grid-tile *ngFor="let pet of pets">
     <app-pet

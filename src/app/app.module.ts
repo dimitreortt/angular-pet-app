@@ -11,9 +11,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { PetsComponent } from './components/pets/pets.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { AddPetComponent } from './components/add-pet/add-pet.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, PetComponent, PetsComponent],
+  declarations: [AppComponent, PetComponent, PetsComponent, AddPetComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -23,6 +27,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     MatGridListModule,
     HttpClientModule,
+    MatInputModule,
+    MatFormFieldModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
