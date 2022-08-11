@@ -30,7 +30,6 @@ export class PetsComponent implements OnInit {
   }
 
   addPet(pet: PetInterface) {
-    // this.petService.addPet(pet).subscribe(() => this.pets.push(pet));
-    console.log(pet);
+    this.petService.addPet(pet).subscribe((pet) => this.pets.push(pet));
   }
 }

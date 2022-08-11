@@ -38,8 +38,7 @@ export class PetService {
   }
 
   addPet(pet: PetInterface): Observable<PetInterface> {
-    const addUrl = `${this.url}/${pet.id}`;
     //@ts-ignore
-    return this.http.post<PetInterface>(addUrl, pet, httpOptions);
+    return this.http.post<PetInterface>(this.url, pet, httpOptions);
   }
 }
